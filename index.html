@@ -1,0 +1,1736 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GLOSSÉ — Unveil Your Glow</title>
+<style>
+:root{
+ --cream:#f8e9dd; --cream2:#f3dfd1; --peach:#e9c1aa; --brown:#6d432f;
+ --brown2:#4d3023; --gold:#b18763; --ink:#43291f; --line:#6d432f22;
+ --white:#fff8f1; --muted:#7d5d4d; --dark:#4b2d20;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:12px}
+button,input{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}
+.top{height:29px;background:#7c4c36;color:#f9eadf;text-align:center;display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:.27em}
+.nav{height:52px;background:#faeee6f2;backdrop-filter:blur(14px);position:sticky;top:0;z-index:40;border-bottom:1px solid #6d432f18}
+.navin{height:100%;max-width:1080px;margin:auto;padding:0 18px;display:flex;align-items:center}
+.logo{font:500 28px Georgia,serif;color:#9a684c;letter-spacing:.09em;min-width:180px}
+.navlinks{display:flex;justify-content:center;gap:31px;flex:1;font-family:Georgia,serif;font-size:12px}
+.navlinks a:hover{color:#a96e50}
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: auto;
+  color: #6d432f;
+}
+
+.icons button {
+  width: 24px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: #6d432f;
+  padding: 0;
+}
+
+.icons svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icons button:hover {
+  color: #a96e50;
+}
+
+.search-highlight {
+  outline: 3px solid #b97858;
+  outline-offset: 6px;
+  box-shadow: 0 0 25px #b9785866;
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+/* Prevent mobile browser zoom on search input */
+#searchInput {
+  font-size: 16px !important;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #6d432f55;
+  width: 125px;
+}
+
+.searchBox input {
+  width: 120px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #43291f;
+  padding: 6px 4px;
+  font-size: 10px;
+}
+
+.searchBox input::placeholder {
+  color: #98735d;
+}
+
+.searchBox button {
+  width: 25px;
+  height: 28px;
+  border: 0;
+  background: transparent;
+  color: #6d432f;
+  padding: 0;
+}
+
+body.dark-mode .searchBox {
+  border-bottom-color: #ffffff40;
+}
+
+body.dark-mode .searchBox input {
+  color: #f5e5d9;
+  background: transparent;
+}
+
+body.dark-mode .searchBox input::placeholder {
+  color: #c9aa99;
+}
+
+@media(max-width:560px) {
+  .icons {
+    gap: 5px;
+    margin-left: auto;
+  }
+
+  .searchBox {
+    width: 100px;
+  }
+
+  .searchBox input {
+    width: 73px;
+  }
+}
+
+.icons .bag {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  right: -9px;
+  top: -7px;
+  background: #9a684c;
+  color: #fff;
+  border-radius: 50%;
+  font: 9px Arial;
+  padding: 2px 5px;
+}
+
+#kajal360Overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(40, 25, 18, 0.75);
+  align-items: center;
+  justify-content: center;
+}
+
+#kajal360Viewer {
+  width: min(760px, 92vw);
+  height: min(680px, 88vh);
+  background: #fff8f1;
+  border-radius: 18px;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#kajal360Viewer button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: 0;
+  background: none;
+  font-size: 30px;
+  color: #6d432f;
+  cursor: pointer;
+}
+
+#kajal360Image {
+  max-width: 90%;
+  max-height: 80%;
+  object-fit: contain;
+  user-select: none;
+}
+
+.hero{max-width:1214px;margin:auto;height:330px;background:url("Pos.png") center/cover no-repeat;position:relative}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#f3cdb7a8 0%,#f3cdb72e 50%,transparent 78%)}
+.heroText{position:relative;z-index:1;width:48%;padding:43px 0 0 11%}.eyebrow{font-size:9px;letter-spacing:.18em;font-weight:bold}.hero h1{font:500 43px/1.05 Georgia,serif;margin:16px 0 13px}.hero p{max-width:380px;line-height:1.55;margin:0 0 17px;font-size:12px}.cta{display:inline-block;background:var(--brown);color:white;border-radius:20px;padding:10px 22px;font-size:9px;letter-spacing:.04em}
+.section{max-width:980px;margin:auto;padding:27px 0}.section h2{font:500 20px Georgia,serif;margin:0 0 4px;letter-spacing:.02em}.sub{font-size:10px;color:var(--muted)}
+.favgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:22px;align-items:center}.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:19px;margin-top:18px;text-align:center}.catIcon{height:61px;width:61px;border-radius:50%;margin:auto;background:#f0d3c0;display:grid;place-items:center;font-size:24px}.cat h3{font:italic 17px Georgia;margin:7px 0 0}.cat p{font-size:7px;margin:3px 0;letter-spacing:.03em}
+.guide{height:188px;border-radius:8px;background:url("assets/guide.jpg") center/cover no-repeat;display:flex;align-items:center;padding:22px 0 22px 55px;position:relative;overflow:hidden}.guide:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#f8e8dccf,#f8e8dc22)}.guideText{position:relative;z-index:1;width:55%}.guide h2{font-size:19px;margin:5px 0}.guide p{font-size:9px;line-height:1.45}.guide .cta{font-size:8px;padding:8px 17px}
+.arrivalHead{display:flex;justify-content:space-between;align-items:end;margin-bottom:14px}.view{font-size:9px;color:#98735d}.products{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.card{min-width:0}.pic{height:139px;border-radius:5px;background:#f1d8c6 center/cover no-repeat;position:relative}.pic span{position:absolute;top:7px;left:7px;background:#9b6a51;color:#fff;padding:3px 6px;border-radius:4px;font-size:7px}.heart{position:absolute;top:6px;right:7px;border:0;background:transparent;color:#5d392b;font-size:19px}.card h3{font-size:10px;margin:8px 0 3px;font-weight:500}.tag{font-size:7px;color:#765748;letter-spacing:.05em}.stars{color:#8c6047;font-size:9px;margin-top:4px}.price{font-weight:bold;font-size:9px;margin:3px 0 8px}.add{width:100%;border:0;background:#714532;color:#fff;border-radius:12px;padding:6px;font-size:8px}
+.ritual{height:132px;border-radius:6px;background:url("assets/ritual.jpg") center/cover no-repeat;display:flex;align-items:center;position:relative;overflow:hidden}.ritual:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#e6bda4cc,#e6bda448 58%,#e6bda4b8)}.ritualText{position:relative;z-index:2;padding-left:28px;width:50%}.ritualText h2{font-size:18px}.ritualText p{font-size:9px}.ritual .cta{font-size:8px;padding:8px 17px}.mood{position:absolute;right:22px;z-index:2;width:23%;text-align:center}.mood h3{font:500 17px Georgia;margin:3px}.mood p{font-size:8px}
+.footer{background:var(--dark);color:#f7e8df;padding:25px 0 10px}.foot{max-width:980px;margin:auto;display:grid;grid-template-columns:1.3fr 1fr 1fr 1.35fr;gap:25px}.foot .logo{color:#f5ddcf;font-size:24px;min-width:auto}.foot h4{font-size:10px;margin:2px 0 8px}.foot a,.foot p{display:block;color:#d7bdb0;font-size:8px;margin:5px 0}.social{font-size:16px;display:flex;gap:10px;margin-top:8px}.signup{background:#f8e7dc;color:#765344;border:0;border-radius:4px;padding:8px;width:100%;font-size:8px}.last{max-width:980px;margin:20px auto 0;border-top:1px solid #ffffff22;padding-top:14px;text-align:center;color:#c8a99b;font-size:8px}.last strong{display:block;color:#f7e6dc;font:italic 17px Georgia;margin-bottom:3px}
+.drawer{position:fixed;inset:0;background:#281a14aa;z-index:80;display:none}.drawer.open{display:block}.drawerBox{position:absolute;right:0;top:0;height:100%;width:min(390px,100%);background:#fff1e7;padding:22px;overflow:auto}.close{float:right;border:0;background:none;font-size:24px}.bagItem{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.bagItem img{width:58px;height:58px;object-fit:cover;border-radius:5px}.checkout{width:100%;border:0;background:var(--brown);color:#fff;padding:11px;border-radius:8px}
+.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);opacity:0;background:var(--dark);color:#fff;padding:9px 15px;border-radius:99px;font-size:9px;z-index:100;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:850px){.navlinks{display:none}.logo{min-width:0}.navin{justify-content:space-between}.section{padding:24px 18px}.heroText{width:58%;padding-left:7%}.products{grid-template-columns:repeat(3,1fr)}.foot{grid-template-columns:1fr 1fr;padding:0 18px}}
+@media(max-width:560px){.hero{height:480px;background-position:58% center}.heroText{width:78%;padding:35px 0 0 24px}.hero h1{font-size:38px}.favgrid{grid-template-columns:1fr}.cats{gap:8px}.guide{height:220px}.products{grid-template-columns:repeat(2,1fr)}.pic{height:180px}.ritualText{width:70%;padding-left:18px}.mood{display:none}.foot{grid-template-columns:1fr 1fr}.footer{padding-left:8px;padding-right:8px}}
+
+/* GLOSSÉ DARK MODE */
+body.dark-mode {
+  --cream: #241713;
+  --cream2: #302019;
+  --peach: #493025;
+  --brown: #8d634b;
+  --brown2: #38231b;
+  --gold: #c09a76;
+  --ink: #f5e5d9;
+  --line: #ffffff24;
+  --white: #38251d;
+  --muted: #d0b5a4;
+  --dark: #180f0c;
+  background: #241713;
+  color: #f5e5d9;
+}
+
+body.dark-mode .top {
+  background: #180f0c;
+  color: #f5e5d9;
+}
+
+body.dark-mode .nav {
+  background: #241713f2;
+  border-bottom-color: #ffffff20;
+}
+
+body.dark-mode .section,
+body.dark-mode .shade-finder {
+  background-color: #241713;
+  color: #f5e5d9;
+}
+
+body.dark-mode .shade-results,
+body.dark-mode .upload-area,
+body.dark-mode .drawerBox {
+  background: #302019;
+  color: #f5e5d9;
+}
+
+body.dark-mode input {
+  background: #38251d;
+  color: #fff1e7;
+  border: 1px solid #765440;
+}
+
+body.dark-mode .glosse-slideshow {
+  background: #241713;
+}
+
+body.dark-mode .icons button {
+  color: #f5e5d9;
+}
+
+#darkModeToggle {
+  flex-shrink: 0;
+}
+
+/* GLOSSE VERTICAL PRODUCT SPIN */
+
+.vertical-product-spin {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 40px;
+}
+
+.product-spin-window {
+  width: min(100%, 420px);
+  height: 520px;
+  position: relative;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  cursor: grab;
+}
+
+.product-spin-window:active {
+  cursor: grabbing;
+}
+
+.product-spin-item {
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    top 0.28s ease,
+    transform 0.28s ease,
+    opacity 0.28s ease,
+    filter 0.28s ease;
+  pointer-events: none;
+}
+
+.product-spin-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.product-spin-item.is-center {
+  z-index: 5;
+  opacity: 1;
+  filter: brightness(1);
+}
+
+.product-spin-item.is-near {
+  z-index: 3;
+  opacity: 0.62;
+  filter: brightness(0.72);
+}
+
+.product-spin-item.is-far {
+  z-index: 1;
+  opacity: 0.25;
+  filter: brightness(0.48);
+}
+
+.product-spin-item.is-hidden {
+  opacity: 0;
+}
+
+.product-spin-frame {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(109, 67, 47, 0.22);
+  pointer-events: none;
+  z-index: 10;
+}
+
+body.dark-mode .product-spin-frame {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+@media (max-width: 560px) {
+  .product-spin-window {
+    height: 500px;
+  }
+
+  .product-spin-item {
+    height: 180px;
+  }
+
+  .product-spin-frame {
+    width: 280px;
+    height: 190px;
+  }
+}
+
+</style>
+
+<style>
+/* =========================
+   GLOSSÉ DARK MODE FIX
+   ========================= */
+
+body.dark-mode .catIcon {
+  background: #3a2923 !important;
+  color: #f4dfd3 !important;
+}
+
+body.dark-mode .cat h3,
+body.dark-mode .cat p {
+  color: #f4dfd3 !important;
+}
+
+/* Find your GLOSSÉ shade */
+body.dark-mode .guide {
+  background:
+    linear-gradient(90deg, #3b2b25cc, #211813aa),
+    url("assets/guide.jpg") center/cover no-repeat !important;
+}
+
+body.dark-mode .guide:before {
+  background: linear-gradient(
+    90deg,
+    #241914cc,
+    #24191444
+  ) !important;
+}
+
+body.dark-mode .guideText,
+body.dark-mode .guideText h2,
+body.dark-mode .guideText p,
+body.dark-mode .guideText .eyebrow {
+  color: #f5e5dc !important;
+}
+
+/* Find the perfect blend... */
+body.dark-mode .ritual {
+  background:
+    linear-gradient(90deg, #3b2922cc, #211712aa),
+    url("assets/ritual.jpg") center/cover no-repeat !important;
+}
+
+body.dark-mode .ritual:after {
+  background: linear-gradient(
+    90deg,
+    #2b1d18dd,
+    #2b1d1855 58%,
+    #2b1d18cc
+  ) !important;
+}
+
+body.dark-mode .ritualText,
+body.dark-mode .ritualText h2,
+body.dark-mode .ritualText p,
+body.dark-mode .ritualText .eyebrow,
+body.dark-mode .mood,
+body.dark-mode .mood h3,
+body.dark-mode .mood p {
+  color: #f5e5dc !important;
+}
+
+/* Buttons */
+body.dark-mode .guide .cta,
+body.dark-mode .ritual .cta {
+  background: #9a684c !important;
+  color: #fff8f3 !important;
+}
+</style>
+
+</head>
+<body>
+<div class="top">A LITTLE GLOW GOES A LONG WAY</div>
+<nav class="nav"><div class="navin"><a class="logo" href="#home">GLOSSÉ</a><div class="navlinks"><a href="#home">Home</a><a href="#shop">Shop</a><a href="#story">Our Story</a><a href="#guide">Beauty Guide</a><a href="#contact">Contact</a></div>
+
+<div class="icons">
+<button id="darkModeToggle" type="button" aria-label="Turn dark mode on">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5
+    8.5 8.5 0 1 0 20.5 15.5Z"></path>
+  </svg>
+</button>
+
+<div class="searchBox">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="Search products..."
+    onkeydown="if(event.key==='Enter') searchProducts()"
+  >
+
+  <button
+    type="button"
+    onclick="searchProducts()"
+    aria-label="Search"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="10.8" cy="10.8" r="6.8"></circle>
+      <path d="m16 16 4.5 4.5"></path>
+    </svg>
+  </button>
+</div>
+
+  <button onclick="openWishlist()" aria-label="Wishlist">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.8 8.8c0 5-8.8 10-8.8 10s-8.8-5-8.8-10a4.7 4.7 0 0 1 8.8-2.3 4.7 4.7 0 0 1 8.8 2.3Z"></path>
+    </svg>
+  </button>
+
+  <button onclick="openProfile()" aria-label="Profile">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="7.5" r="3.5"></circle>
+      <path d="M4.5 21v-2a7.5 7.5 0 0 1 15 0v2Z"></path>
+    </svg>
+  </button>
+
+  <button class="bag" onclick="openBag()" aria-label="Shopping bag">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 8h14l1 13H4L5 8Z"></path>
+      <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
+    </svg>
+    <span class="badge" id="badge">0</span>
+  </button>
+</div>
+</div>
+</nav>
+
+<section class="hero" id="home"><div class="heroText"><div class="eyebrow">WELCOME TO GLOSSÉ</div><h1>Beauty, in your<br>own glow.</h1><p>Your glow. Your rules. Meet your new beauty favourites. Thoughtfully chosen shades, everyday essentials, and a little GLOSSÉ magic for every version of you.</p><a class="cta" href="#shop">SHOP THE COLLECTION →</a></div> 
+
+</section>
+
+<!-- GLOSSÉ AUTO SLIDESHOW -->
+<div class="glosse-slideshow">
+  <img src="./glow1.png" class="glow-slide active" alt="GLOSSÉ beauty collection">
+  <img src="./glow2.png" class="glow-slide" alt="GLOSSÉ makeup collection">
+  <img src="./glow3.png" class="glow-slide" alt="GLOSSÉ beauty essentials">
+</div>
+
+<style>
+.glosse-slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 1536px;
+  aspect-ratio: 3 / 2;
+  margin: 30px auto;
+  overflow: hidden;
+  background: #f4e8e0;
+}
+
+.glow-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.glow-slide.active {
+  opacity: 1;
+}
+</style>
+
+<script>
+(() => {
+  const slides = document.querySelectorAll(".glosse-slideshow .glow-slide");
+  let current = 0;
+
+  setInterval(() => {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+  }, 3000);
+})();
+</script>
+
+<!-- GLOSSÉ SHADE FINDER -->
+<section class="shade-finder" id="shade-finder">
+  <div class="shade-box">
+    <p class="shade-label">GLOSSÉ BEAUTY TECHNOLOGY</p>
+    <h2>Let's find your match ✨</h2>
+    <p class="shade-description">
+      Discover makeup shades that complement your natural skin tone.
+    </p>
+
+    <label for="facePhoto" class="upload-area">
+      <span class="upload-icon">📸</span>
+      <strong>Upload a photo or take one</strong>
+      <span>Choose a clear, front-facing photo</span>
+    </label>
+
+    <input
+      type="file"
+      id="facePhoto"
+      accept="image/*"
+      capture="user"
+      hidden
+    >
+
+    <div id="photoPreview" class="photo-preview" hidden>
+      <img id="previewImage" alt="Your uploaded photo">
+      <button type="button" id="clearPhoto" class="clear-photo">
+        ✕ Remove photo
+      </button>
+    </div>
+
+    <button id="findShades" class="find-shades" type="button" disabled>
+      FIND MY SHADES ✨
+    </button>
+
+    <p id="shadeMessage" class="shade-message" aria-live="polite"></p>
+
+    <div id="shadeResults" class="shade-results" hidden>
+      <h3>Your GLOSSÉ shade edit 💄</h3>
+      <p id="toneResult"></p>
+
+      <div class="shade-cards">
+        <article class="shade-card">
+          <div id="lipstickSwatch" class="shade-swatch"></div>
+          <h4>Lipstick</h4>
+          <p id="lipstickResult"></p>
+        </article>
+
+        <article class="shade-card">
+          <div id="blushSwatch" class="shade-swatch"></div>
+          <h4>Blush</h4>
+          <p id="blushResult"></p>
+        </article>
+
+        <article class="shade-card">
+          <div id="glossSwatch" class="shade-swatch"></div>
+          <h4>Lip Gloss</h4>
+          <p id="glossResult"></p>
+        </article>
+      </div>
+
+      <p class="shade-note">
+        Your results are estimates, not a definitive skin or undertone
+        assessment. Lighting, filters and camera settings can affect them.
+      </p>
+    </div>
+
+    <p class="privacy-note">
+      🔒 Privacy first: your photo is analysed in this browser and is not
+      uploaded to our server by this feature.
+    </p>
+  </div>
+</section>
+
+<style>
+.shade-finder {
+  padding: 75px 20px;
+  background: #f7eee8;
+  color: #493329;
+  font-family: inherit;
+}
+
+.shade-box {
+  max-width: 760px;
+  margin: auto;
+  text-align: center;
+}
+
+.shade-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #98725f;
+}
+
+.shade-box h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: normal;
+  margin: 15px 0;
+}
+
+.shade-description {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #806b60;
+  margin-bottom: 28px;
+}
+
+.upload-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  padding: 24px;
+  border: 1px dashed #bd9883;
+  background: #fffaf6;
+  cursor: pointer;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.upload-area:hover {
+  background: #fff3ec;
+}
+
+.upload-icon {
+  font-size: 32px;
+}
+
+.upload-area strong {
+  font-size: 14px;
+}
+
+.upload-area span:last-child {
+  font-size: 12px;
+  color: #8e786c;
+}
+
+.photo-preview {
+  margin: 22px auto;
+}
+
+.photo-preview img {
+  display: block;
+  width: min(100%, 300px);
+  max-height: 360px;
+  object-fit: contain;
+  margin: auto;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.clear-photo {
+  border: none;
+  background: transparent;
+  color: #8a6250;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.find-shades {
+  width: 100%;
+  margin-top: 20px;
+  padding: 17px;
+  border: none;
+  border-radius: 3px;
+  background: #684638;
+  color: white;
+  letter-spacing: 2px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.find-shades:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.shade-message {
+  font-size: 13px;
+  color: #8a6250;
+  line-height: 1.7;
+}
+
+.shade-results {
+  margin-top: 30px;
+  padding: 25px 15px;
+  background: #fffaf6;
+  border-radius: 5px;
+}
+
+.shade-results h3 {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: normal;
+}
+
+.shade-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.shade-card {
+  padding: 12px 7px;
+  border: 1px solid #eee0d6;
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+
+.shade-swatch {
+  height: 75px;
+  border-radius: 3px;
+}
+
+.shade-card h4 {
+  font-size: 13px;
+  margin: 13px 0 7px;
+}
+
+.shade-card p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #806b60;
+}
+
+.shade-note,
+.privacy-note {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #89756a;
+  margin-top: 25px;
+}
+
+@media (max-width: 480px) {
+  .shade-finder {
+    padding: 50px 15px;
+  }
+
+  .shade-cards {
+    gap: 7px;
+  }
+
+  .shade-card {
+    padding: 8px 5px;
+  }
+
+  .shade-swatch {
+    height: 58px;
+  }
+}
+</style>
+
+<script>
+(() => {
+  const photoInput = document.getElementById("facePhoto");
+  const previewBox = document.getElementById("photoPreview");
+  const previewImage = document.getElementById("previewImage");
+  const findButton = document.getElementById("findShades");
+  const clearButton = document.getElementById("clearPhoto");
+  const message = document.getElementById("shadeMessage");
+  const results = document.getElementById("shadeResults");
+
+  let currentPhotoURL = null;
+
+  photoInput.addEventListener("change", () => {
+    const file = photoInput.files && photoInput.files[0];
+
+    results.hidden = true;
+    message.textContent = "";
+
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      message.textContent = "Please choose an image file.";
+      photoInput.value = "";
+      return;
+    }
+
+    if (file.size > 12 * 1024 * 1024) {
+      message.textContent = "Please choose a photo smaller than 12 MB.";
+      photoInput.value = "";
+      return;
+    }
+
+    if (currentPhotoURL) URL.revokeObjectURL(currentPhotoURL);
+
+    currentPhotoURL = URL.createObjectURL(file);
+    previewImage.src = currentPhotoURL;
+    previewBox.hidden = false;
+    findButton.disabled = false;
+    message.textContent = "Photo ready! Click FIND MY SHADES ✨";
+  });
+
+  clearButton.addEventListener("click", () => {
+    photoInput.value = "";
+    previewImage.removeAttribute("src");
+    previewBox.hidden = true;
+    results.hidden = true;
+    findButton.disabled = true;
+    message.textContent = "";
+
+    if (currentPhotoURL) {
+      URL.revokeObjectURL(currentPhotoURL);
+      currentPhotoURL = null;
+    }
+  });
+
+  findButton.addEventListener("click", async () => {
+    if (!previewImage.src || !previewImage.naturalWidth) {
+      message.textContent = "Please upload a photo first.";
+      return;
+    }
+
+    findButton.disabled = true;
+    results.hidden = true;
+    message.textContent = "Analysing your photo... ✨";
+
+    try {
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d", { willReadFrequently: true });
+
+      canvas.width = previewImage.naturalWidth;
+      canvas.height = previewImage.naturalHeight;
+      ctx.drawImage(previewImage, 0, 0);
+
+      /*
+       * This is a rough color estimate from the central face area,
+       * not actual face detection. Keep the photo front-facing,
+       * evenly lit, and free of filters for better results.
+       */
+      const xStart = Math.floor(canvas.width * 0.30);
+      const xEnd = Math.floor(canvas.width * 0.70);
+      const yStart = Math.floor(canvas.height * 0.25);
+      const yEnd = Math.floor(canvas.height * 0.68);
+
+      const width = Math.max(1, xEnd - xStart);
+      const height = Math.max(1, yEnd - yStart);
+      const imageData = ctx.getImageData(xStart, yStart, width, height);
+      const pixels = imageData.data;
+
+      let red = 0, green = 0, blue = 0, count = 0;
+
+      for (let i = 0; i < pixels.length; i += 16) {
+        const r = pixels[i];
+        const g = pixels[i + 1];
+        const b = pixels[i + 2];
+        const max = Math.max(r, g, b);
+        const min = Math.min(r, g, b);
+
+        // Skip extreme shadows, highlights and highly saturated pixels.
+        if (max < 35 || min > 245 || max - min > 100) continue;
+
+        red += r;
+        green += g;
+        blue += b;
+        count++;
+      }
+
+      if (count < 20) {
+        throw new Error("Could not estimate colors from this photo.");
+      }
+
+      red /= count;
+      green /= count;
+      blue /= count;
+
+      const brightness = (red + green + blue) / 3;
+      const warmth = red - blue;
+
+      let tone, lipstick, blush, gloss;
+      let lipColor, blushColor, glossColor;
+
+      if (brightness < 100) {
+        tone = "Deep color range";
+        lipstick = "Berry Rose";
+        blush = "Rich Berry";
+        gloss = "Cocoa Glow";
+        lipColor = "#85364b";
+        blushColor = "#a54c62";
+        glossColor = "#704536";
+      } else if (brightness < 145) {
+        tone = "Medium-deep color range";
+        lipstick = "Warm Rose";
+        blush = "Terracotta Rose";
+        gloss = "Caramel Nude";
+        lipColor = "#a64f57";
+        blushColor = "#bf715d";
+        glossColor = "#a36e50";
+      } else if (brightness < 185) {
+        tone = "Medium color range";
+        lipstick = "Rosewood";
+        blush = "Peach Rose";
+        gloss = "Rosy Nude";
+        lipColor = "#b65c65";
+        blushColor = "#df927c";
+        glossColor = "#bb827b";
+      } else {
+        tone = "Light color range";
+        lipstick = "Soft Pink";
+        blush = "Peach Pink";
+        gloss = "Pink Champagne";
+        lipColor = "#c87583";
+        blushColor = "#edaa99";
+        glossColor = "#dba49b";
+      }
+
+      let undertone;
+
+      if (warmth > 18) {
+        undertone = "warm-leaning";
+      } else if (warmth < -8) {
+        undertone = "cool-leaning";
+      } else {
+        undertone = "neutral-leaning";
+      }
+
+      if (undertone === "warm-leaning") {
+        blush = brightness < 125 ? "Warm Terracotta" : "Peach Coral";
+        blushColor = brightness < 125 ? "#b86648" : "#e69a76";
+        gloss = "Warm Caramel";
+        glossColor = "#b47a55";
+      } else if (undertone === "cool-leaning") {
+        blush = "Cool Rose";
+        blushColor = "#c7798c";
+        gloss = "Mauve Glow";
+        glossColor = "#a97689";
+      }
+
+      document.getElementById("toneResult").textContent =
+        "Estimated color range: " + tone +
+        ". Possible undertone: " + undertone +
+        ". These are approximate color suggestions, not a reliable skin analysis.";
+
+      document.getElementById("lipstickResult").textContent = lipstick;
+      document.getElementById("blushResult").textContent = blush;
+      document.getElementById("glossResult").textContent = gloss;
+
+      document.getElementById("lipstickSwatch").style.background = lipColor;
+      document.getElementById("blushSwatch").style.background = blushColor;
+      document.getElementById("glossSwatch").style.background = glossColor;
+
+      results.hidden = false;
+      message.textContent = "Your shade suggestions are ready! 💗";
+      results.scrollIntoView({ behavior: "smooth", block: "start" });
+    } catch (error) {
+      message.textContent =
+        "We couldn't estimate colors reliably. Try a clear photo in natural daylight.";
+    } finally {
+      findButton.disabled = false;
+    }
+  });
+})();
+</script>
+
+<section class="section"><div class="favgrid"><div><div class="eyebrow">FIND YOUR FAVOURITES</div><h2>Beauty, your way.</h2><div class="sub">Little essentials. Big confidence.</div><div class="cats"><a class="cat" href="#shop"><div class="catIcon">♧</div><h3>Lips</h3><p>LIPSTICKS & GLOSS</p></a><a class="cat" href="#shop"><div class="catIcon">◌</div><h3>Face</h3><p>BLUSH & FOUNDATION</p></a><a class="cat" href="#shop"><div class="catIcon">◉</div><h3>Eyes</h3><p>MASCARA & MORE</p></a><a class="cat" href="#shop"><div class="catIcon">✧</div><h3>Glow</h3><p>HIGHLIGHTERS</p></a></div></div><div class="guide" id="guide"><div class="guideText"><div class="eyebrow">YOUR PERSONAL BEAUTY GUIDE</div><h2>Find your GLOSSÉ shade</h2><p>Upload a photo or take one to explore makeup shades selected for you.</p> <a class="cta" href="#shade-finder">LET'S FIND MY MATCH ✨</a></div></div></div></section>
+
+<!-- GLOSSE VERTICAL PRODUCT SPIN -->
+<section class="section">
+  <div class="vertical-product-spin">
+
+    <div class="product-spin-window" id="verticalProductSpin">
+
+      <div class="product-spin-frame"></div>
+
+      <div class="product-spin-item is-center" data-index="0">
+        <img
+          src="lipstick.jpg"
+          alt="Velvet Matte Lipstick"
+        >
+      </div>
+
+      <div class="product-spin-item is-near" data-index="1">
+        <img
+          src="lip_gloss.jpg"
+          alt="Hydrating Lip Gloss"
+        >
+      </div>
+
+      <div class="product-spin-item is-near" data-index="2">
+        <img
+          src="lip_tint.jpg"
+          alt="Everyday Lip Tint"
+        >
+      </div>
+
+      <div class="product-spin-item is-far" data-index="3">
+        <img
+          src="blush.jpg"
+          alt="Soft Blush"
+        >
+      </div>
+
+      <div class="product-spin-item is-far" data-index="4">
+        <img
+          src="Duo_blush.jpg"
+          alt="Duo Blush Palette"
+        >
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="shop"><div class="arrivalHead"><div><div class="eyebrow">NEW ARRIVALS</div><h2>Fresh shades. Timeless beauty.</h2></div><a class="view" href="#shop">View All →</a></div>
+<div class="products" id="products"></div>
+<script>
+const GLOSSE_PRODUCTS = [
+  {name:"Velvet Matte Lipstick",category:"LIPS",reviews:124,price:"2,850",image:"lipstick.jpg"},
+  {name:"Hydrating Lip Gloss",category:"LIPS",reviews:98,price:"2,650",image:"lip_gloss.jpg"},
+  {name:"Everyday Lip Tint",category:"LIPS",reviews:86,price:"2,450",image:"lip_tint.jpg"},
+  {name:"Nourishing Lip Balm",category:"LIP CARE",reviews:73,price:"1,850",image:"lip_balm.jpg"},
+  {name:"Daily Lip Care",category:"LIP CARE",reviews:64,price:"1,950",image:"lip_care.jpg"},
+  {name:"Soft Blush",category:"FACE",reviews:103,price:"3,250",image:"blush.jpg"},
+  {name:"Duo Blush Palette",category:"FACE",reviews:91,price:"3,650",image:"Duo_blush.jpg"},
+  {name:"Natural Henna",category:"BEAUTY",reviews:58,price:"1,650",image:"henna.jpg"},
+  {name:"Classic Kajal",category:"EYES",reviews:87,price:"1,450",image:"kajal.jpg"},
+  {name:"GLOSSÉ Collection Set",category:"SETS",reviews:112,price:"5,850",image:"collection.jpg"},
+  {name:"Signature Gift Packaging",category:"GIFTS",reviews:42,price:"8,500",image:"packaging.jpg"}
+];
+
+document.getElementById('products').innerHTML = GLOSSE_PRODUCTS.map(p => `
+<div class="card" id="product-${p.name.replace(/\s+/g, '-').toLowerCase()}">
+  <div class="pic"
+     style="background-image:url('${p.image}'); cursor:${p.name === 'Classic Kajal' ? 'pointer' : 'default'}"
+     onclick="${p.name === 'Classic Kajal' ? 'openKajal360()' : ''}">
+ <span>NEW</span>
+<button class="heart" onclick="event.stopPropagation(); addToWishlist('${p.name}', this)">♡</button>
+</div>
+    <h3>${p.name}</h3>
+    <div class="tag">${p.category}</div>
+    <div class="stars">★★★★★ <span style="color:#65483c"> (${p.reviews})</span></div>
+    <div class="price">LKR ${p.price}</div>
+   <button class="add"
+  onclick="event.stopPropagation(); add('${p.name}','${p.price}','${p.image}')">
+  Add to Bag
+</button>
+  </div>
+`).join('');
+</script>
+</div>
+</section>
+
+<section class="section" id="story"><div class="ritual"><div class="ritualText"><div class="eyebrow">BUILD YOUR GLOSSÉ RITUAL</div><h2>Find the perfect blend for your everyday glow.</h2><a class="cta" href="#shop">EXPLORE SETS →</a></div><div class="mood"><h3>SHOP BY MOOD</h3><p>Soft. Bold. Natural. You.</p><a class="cta" href="#shop">DISCOVER MORE →</a></div></div></section>
+
+<footer class="footer" id="contact"><div class="foot"><div><div class="logo">GLOSSÉ</div><p>UNVEIL YOUR GLOW.</p><div class="social">◎ ♪ ◌ ▶</div></div><div><h4>Quick Links</h4><a href="#home">Home</a><a href="#shop">Shop</a><a href="#story">Our Story</a><a href="#guide">Beauty Guide</a><a href="#contact">Contact</a></div><div><h4>Customer Care</h4><a href="#">FAQs</a><a href="#">Shipping & Delivery</a><a href="#">Returns & Exchanges</a><a href="#">Track Order</a><a href="#">Wishlist</a></div><div><h4>Stay in the Glow</h4><p>Love a little beauty news?<br>Sign up for product launches, beauty notes, and GLOSSÉ updates.</p><input class="signup" placeholder="Your email address" onkeydown="if(event.key==='Enter')toast('Welcome to the glow ✦')"></div></div><div class="last"><strong>More Glow Please ♡</strong><span>© 2026 GLOSSÉ. All rights reserved. &nbsp;&nbsp; Privacy Policy &nbsp; | &nbsp; Terms & Conditions</span></div></footer>
+
+<div id="kajal360Overlay" style="display:none;">
+  <div id="kajal360Viewer">
+    <button onclick="closeKajal360()">×</button>
+    <img id="kajal360Image" src="kajal_360_01_front.jpg" alt="Classic Kajal 360° view">
+    <p>Drag / swipe left or right to rotate</p>
+  </div>
+</div> 
+<!-- BAG DRAWER -->
+<div class="drawer" id="drawer" onclick="if(event.target===this)closeBag()">
+  <div class="drawerBox">
+    <button class="close" onclick="closeBag()">×</button>
+    <h2 style="font:500 30px Georgia">Your Bag</h2>
+    <div id="bag"></div>
+
+    <div style="display:flex;justify-content:space-between;font-weight:bold;margin:18px 0">
+      <span>Subtotal</span>
+      <span id="total">LKR 0</span>
+    </div>
+
+    <button class="checkout" onclick="checkout()">
+      PLACE ORDER VIA WHATSAPP
+    </button>
+  </div>
+</div>
+
+<!-- PROFILE DRAWER -->
+<div class="drawer" id="profileDrawer" onclick="if(event.target===this)closeProfile()">
+  <div class="drawerBox">
+    <button class="close" onclick="closeProfile()">×</button>
+
+    <h2 style="font:500 30px Georgia">My Profile ♡</h2>
+
+    <p style="color:#856655">
+      Welcome to your little beauty space.
+    </p>
+
+<div id="loginStatus" style="margin-top:15px;color:#856655;font-size:11px;">
+  Not logged in
+</div>
+
+<button
+  id="logoutBtn"
+  class="cta"
+  onclick="logoutUser()"
+  style="display:none;margin-top:12px"
+>
+  LOG OUT
+</button>
+
+    <div style="margin-top:24px">
+      <label for="profileName">Your Name</label>
+      <input id="profileName"
+             type="text"
+             placeholder="Enter your name"
+             style="width:100%;padding:12px;margin:8px 0 18px">
+
+      <label for="profileEmail">Email Address</label>
+      <input id="profileEmail"
+             type="email"
+             placeholder="Enter your email"
+             style="width:100%;padding:12px;margin:8px 0 18px">
+
+      <button class="cta" onclick="saveProfile()">
+        SAVE PROFILE ♡
+      </button>
+    </div>
+
+    <hr style="margin:25px 0;border:0;border-top:1px solid #eadbd2">
+  <button class="cta" onclick="openLogin()">
+  LOGIN / SIGN UP ✨
+</button>
+    <button class="cta"
+            onclick="showProfileOrders()"
+            style="margin-top:12px">
+      MY ORDERS ♡
+    </button>
+  </div>
+</div>
+
+<!-- LOGIN / SIGN UP DRAWER -->
+<div class="drawer" id="loginDrawer" onclick="if(event.target===this)closeLogin()">
+  <div class="drawerBox">
+    <button class="close" onclick="closeLogin()">×</button>
+
+    <h2 style="font:500 30px Georgia">Welcome to GLOSSÉ ♡</h2>
+
+    <p style="color:#856655">
+      Login or create your GLOSSÉ account.
+    </p>
+
+    <label>Email Address</label>
+    <input
+      id="loginEmail"
+      type="email"
+      placeholder="Enter your email"
+      style="width:100%;padding:12px;margin:8px 0 18px"
+    >
+
+    <label>Password</label>
+    <input
+      id="loginPassword"
+      type="password"
+      placeholder="Enter your password"
+      style="width:100%;padding:12px;margin:8px 0 20px"
+    >
+
+    <button class="cta" onclick="loginUser()">
+      LOGIN ♡
+    </button>
+
+    <button
+      class="cta"
+      onclick="signupUser()"
+      style="margin-top:12px"
+    >
+      SIGN UP ✨
+    </button>
+  </div>
+</div> 
+<div class="toast" id="toast"></div>
+<script>
+let cart=[];
+function add(name,price,img){cart.push({name,price,img});document.getElementById('badge').textContent=cart.length;toast(name+' added to your bag ✦')}
+function openBag(){let b=document.getElementById('bag'); document.querySelector('#drawer h2').textContent = 'Your Bag';
+document.querySelector('#drawer .checkout').style.display = 'block';
+document.querySelector('#drawer #total').parentElement.style.display = 'flex'; b.innerHTML=cart.length?cart.map((x,i)=>`<div class="bagItem"><img src="${x.img}"><div><b>${x.name}</b><div>LKR ${x.price}</div><button style="border:0;background:none;color:#8c5d47;padding:4px 0;font-size:9px" onclick="cart.splice(${i},1);openBag();document.getElementById('badge').textContent=cart.length">Remove</button></div></div>`).join(''):'<p style="color:#856655">Your bag is waiting for a little glow ✦</p>';let n=cart.reduce((s,x)=>s+Number(x.price.replace(',','')),0);document.getElementById('total').textContent='LKR '+n.toLocaleString();document.getElementById('drawer').classList.add('open')}
+function closeBag(){document.getElementById('drawer').classList.remove('open')} 
+
+function openProfile(){
+  const loggedIn = localStorage.getItem('glosseLoggedIn') === 'true';
+
+  if(loggedIn){
+    const account = JSON.parse(
+      localStorage.getItem('glosseAccount') || 'null'
+    );
+
+    if(account){
+      document.getElementById('profileEmail').value = account.email || '';
+    }
+  }
+
+  document.getElementById('profileDrawer').classList.add('open');
+}
+
+function closeProfile(){
+  document.getElementById('profileDrawer').classList.remove('open');
+}
+
+function openLogin(){
+  document.getElementById('loginDrawer').classList.add('open');
+}
+
+function closeLogin(){
+  document.getElementById('loginDrawer').classList.remove('open');
+}
+
+function loginUser(){
+  const email = document.getElementById('loginEmail').value.trim();
+  const password = document.getElementById('loginPassword').value;
+
+  if(!email || !password){
+    toast('Please enter your email and password ♡');
+    return;
+  }
+
+  if(!document.getElementById('loginEmail').checkValidity()){
+    toast('Please enter a valid email address');
+    return;
+  }
+
+  const account = JSON.parse(
+    localStorage.getItem('glosseAccount') || 'null'
+  );
+
+  if(!account){
+    toast('Please sign up first ✨');
+    return;
+  }
+
+  if(account.email !== email || account.password !== password){
+    toast('Incorrect email or password');
+    return;
+  }
+
+  localStorage.setItem('glosseLoggedIn', 'true');
+
+  toast('Welcome back to GLOSSÉ ♡');
+  closeLogin();
+  updateLoginStatus();
+}
+
+function signupUser(){
+  const email = document.getElementById('loginEmail').value.trim();
+  const password = document.getElementById('loginPassword').value;
+
+  if(!email || !password){
+    toast('Please enter your email and password ♡');
+    return;
+  }
+
+  if(!document.getElementById('loginEmail').checkValidity()){
+    toast('Please enter a valid email address');
+    return;
+  }
+
+  if(password.length < 6){
+    toast('Password must be at least 6 characters');
+    return;
+  }
+
+  const existingAccount = localStorage.getItem('glosseAccount');
+
+  if(existingAccount){
+    toast('An account already exists. Please login ♡');
+    return;
+  }
+
+  localStorage.setItem(
+    'glosseAccount',
+    JSON.stringify({
+      email: email,
+      password: password
+    })
+  );
+
+  localStorage.setItem('glosseLoggedIn', 'true');
+
+  toast('Account created successfully ✨');
+  closeLogin();
+  updateLoginStatus();
+}
+
+function logoutUser(){
+  localStorage.removeItem('glosseLoggedIn');
+
+  toast('You have been logged out ♡');
+
+  updateLoginStatus();
+  closeProfile();
+}
+
+function updateLoginStatus(){
+  const loggedIn = localStorage.getItem('glosseLoggedIn') === 'true';
+  const status = document.getElementById('loginStatus');
+  const logoutBtn = document.getElementById('logoutBtn');
+
+  if(status){
+    status.textContent = loggedIn
+      ? 'Logged in ♡'
+      : 'Not logged in';
+  }
+
+  if(logoutBtn){
+    logoutBtn.style.display = loggedIn
+      ? 'block'
+      : 'none';
+  }
+}
+
+function saveProfile(){
+  const name = document.getElementById('profileName').value.trim();
+  const email = document.getElementById('profileEmail').value.trim();
+
+  if(!name || !email){
+    toast('Please enter your name and email ♡');
+    return;
+  }
+
+  if(!document.getElementById('profileEmail').checkValidity()){
+    toast('Please enter a valid email address');
+    return;
+  }
+
+  localStorage.setItem(
+    'glosseProfile',
+    JSON.stringify({
+      name: name,
+      email: email
+    })
+  );
+
+  toast('Profile saved successfully ♡');
+}
+
+function showProfileOrders(){
+  const orders = JSON.parse(
+    localStorage.getItem('glosseOrders') || '[]'
+  );
+
+  if(!orders.length){
+    toast('You have no orders yet ♡');
+    return;
+  }
+
+  alert(
+    'Your Orders ♡\n\n' +
+    orders.map((order, i) =>
+      `${i + 1}. ${order}`
+    ).join('\n')
+  );
+}
+ (function loadProfile(){
+  const saved = JSON.parse(
+    localStorage.getItem('glosseProfile') || 'null'
+  );
+
+  if(saved){
+    document.getElementById('profileName').value =
+      saved.name || '';
+
+    document.getElementById('profileEmail').value =
+      saved.email || '';
+  }
+
+  updateLoginStatus();
+})();
+
+function checkout(){
+  if(!cart.length){
+    toast('Add a product first ✦');
+    return;
+  }
+
+  const orders = JSON.parse(
+    localStorage.getItem('glosseOrders') || '[]'
+  );
+
+  const orderText = cart
+    .map(x => x.name + ' — LKR ' + x.price)
+    .join(', ');
+
+  orders.push(orderText);
+
+  localStorage.setItem(
+    'glosseOrders',
+    JSON.stringify(orders)
+  );
+
+  let msg =
+    'Hi GLOSSÉ! I would like to order:%0A' +
+    cart.map(x =>
+      '- ' + x.name + ' — LKR ' + x.price
+    ).join('%0A');
+
+  window.open(
+    'https://wa.me/94765398484?text=' + msg,
+    '_blank'
+  );
+}
+function toast(t){let x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),2000)} /* GLOSSE VERTICAL PRODUCT SPIN */
+
+(function () {
+  const spin = document.getElementById("verticalProductSpin");
+
+  if (!spin) return;
+
+  const items = Array.from(
+    spin.querySelectorAll(".product-spin-item")
+  );
+
+  let centerIndex = 0;
+  let startY = 0;
+  let dragging = false;
+
+  function updateSpin() {
+    const total = items.length;
+
+    items.forEach((item, i) => {
+      let diff = i - centerIndex;
+
+      if (diff > total / 2) {
+        diff -= total;
+      }
+
+      if (diff < -total / 2) {
+        diff += total;
+      }
+
+      item.classList.remove(
+        "is-center",
+        "is-near",
+        "is-far",
+        "is-hidden"
+      );
+
+      if (diff === 0) {
+        item.classList.add("is-center");
+        item.style.top = "50%";
+      }
+
+      else if (diff === -1) {
+        item.classList.add("is-near");
+        item.style.top = "28%";
+      }
+
+      else if (diff === 1) {
+        item.classList.add("is-near");
+        item.style.top = "72%";
+      }
+
+      else if (diff === -2) {
+        item.classList.add("is-far");
+        item.style.top = "8%";
+      }
+
+      else if (diff === 2) {
+        item.classList.add("is-far");
+        item.style.top = "92%";
+      }
+
+      else {
+        item.classList.add("is-hidden");
+      }
+    });
+  }
+
+  spin.addEventListener("pointerdown", function (event) {
+    dragging = true;
+    startY = event.clientY;
+
+    spin.setPointerCapture(event.pointerId);
+  });
+
+  spin.addEventListener("pointermove", function (event) {
+    if (!dragging) return;
+
+    const distance = event.clientY - startY;
+
+    if (Math.abs(distance) < 45) {
+      return;
+    }
+
+    if (distance < 0) {
+      centerIndex++;
+
+      if (centerIndex >= items.length) {
+        centerIndex = 0;
+      }
+    } else {
+      centerIndex--;
+
+      if (centerIndex < 0) {
+        centerIndex = items.length - 1;
+      }
+    }
+
+    startY = event.clientY;
+
+    updateSpin();
+  });
+
+  spin.addEventListener("pointerup", function () {
+    dragging = false;
+  });
+
+  spin.addEventListener("pointercancel", function () {
+    dragging = false;
+  });
+
+  updateSpin();
+})();
+function openKajal360(){
+  document.getElementById('kajal360Overlay').style.display = 'flex';
+}
+
+function closeKajal360(){
+  document.getElementById('kajal360Overlay').style.display = 'none';
+} 
+
+const kajal360Frames = [
+  "kajal_360_01_front.jpg",
+  "kajal_360_02_45_right.jpg",
+  "kajal_360_03_right.jpg",
+  "kajal_360_04_back.jpg",
+  "kajal_360_05_left.jpg",
+  "kajal_360_06_45_left.jpg"
+];
+
+let kajal360Frame = 0;
+let kajal360StartX = 0;
+
+function updateKajal360(direction){
+  kajal360Frame += direction;
+
+  if(kajal360Frame < 0){
+    kajal360Frame = kajal360Frames.length - 1;
+  }
+
+  if(kajal360Frame >= kajal360Frames.length){
+    kajal360Frame = 0;
+  }
+
+  document.getElementById("kajal360Image").src =
+    kajal360Frames[kajal360Frame];
+}
+
+const kajal360Image = document.getElementById("kajal360Image");
+
+kajal360Image.addEventListener("mousedown", function(e){
+  kajal360StartX = e.clientX;
+});
+
+kajal360Image.addEventListener("mouseup", function(e){
+  const difference = e.clientX - kajal360StartX;
+
+  if(Math.abs(difference) > 30){
+    updateKajal360(difference < 0 ? 1 : -1);
+  }
+});
+
+kajal360Image.addEventListener("touchstart", function(e){
+  kajal360StartX = e.touches[0].clientX;
+});
+
+kajal360Image.addEventListener("touchend", function(e){
+  const difference = e.changedTouches[0].clientX - kajal360StartX;
+
+  if(Math.abs(difference) > 30){
+    updateKajal360(difference < 0 ? 1 : -1);
+  }
+});
+
+function searchProducts(){
+  const input = document.getElementById("searchInput");
+  const query = input.value.trim().toLowerCase();
+
+  if(!query){
+    toast("Type a product name first ✦");
+    return;
+  }
+
+  // Remove keyboard/focus from search bar
+  input.blur();
+
+  const product = GLOSSE_PRODUCTS.find(p =>
+    p.name.toLowerCase().includes(query) ||
+    p.category.toLowerCase().includes(query)
+  );
+
+  if(product){
+    const productId = "product-" + product.name
+      .replace(/\s+/g, "-")
+      .toLowerCase();
+
+    const productCard = document.getElementById(productId);
+
+    if(productCard){
+      productCard.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+      productCard.classList.add("search-highlight");
+
+      setTimeout(() => {
+        productCard.classList.remove("search-highlight");
+      }, 2000);
+    }
+
+    toast(product.name + " found ✦");
+  } else {
+    toast("No product found ✦");
+  }
+}
+let wishlist = JSON.parse(
+  localStorage.getItem('glosseWishlist') || '[]'
+);
+function openWishlist(){
+  const drawer = document.getElementById('drawer');
+  const bag = document.getElementById('bag');
+
+  bag.innerHTML = wishlist.length
+    ? wishlist.map(name => {
+        const p = GLOSSE_PRODUCTS.find(item => item.name === name);
+        if (!p) return '';
+        return `
+          <div class="bagItem">
+            <img src="${p.image}" alt="${p.name}">
+            <div>
+              <b>${p.name}</b>
+              <div>LKR ${p.price}</div>
+             <button onclick="addToWishlist('${p.name}'); openWishlist();"
+                style="border:0;background:none;color:#8c5d47;padding:6px 0">
+                Remove ♡
+              </button>
+            </div>
+          </div>`;
+      }).join('')
+    : '<p>Your wishlist is waiting for a little glow ♡</p>';
+
+  drawer.querySelector('h2').textContent = 'My Wishlist ♡';
+  drawer.querySelector('.checkout').style.display = 'none';
+  drawer.querySelector('#total').parentElement.style.display = 'none';
+  drawer.classList.add('open');
+}
+function addToWishlist(name, heart){
+if(wishlist.includes(name)){
+  wishlist = wishlist.filter(item => item !== name);
+  localStorage.setItem('glosseWishlist', JSON.stringify(wishlist));
+
+
+    if(heart){
+      heart.innerHTML = '♡';
+      heart.style.color = '';
+    }
+    toast(name + ' removed from wishlist');
+  } else {
+    wishlist.push(name);  localStorage.setItem('glosseWishlist', JSON.stringify(wishlist));
+    if(heart){
+      heart.innerHTML = '♥';
+      heart.style.color = '#e53965';
+    }
+    toast(name + ' added to wishlist ♡');
+  }
+
+}
+</script>
+
+<script>
+(() => {
+  const button = document.getElementById("darkModeToggle");
+  if (!button) return;
+
+  const savedMode = localStorage.getItem("glosseDarkMode");
+
+  if (savedMode === "on") {
+    document.body.classList.add("dark-mode");
+  }
+
+  function updateButton() {
+    const isDark = document.body.classList.contains("dark-mode");
+
+    button.setAttribute(
+      "aria-label",
+      isDark ? "Turn dark mode off" : "Turn dark mode on"
+    );
+
+    button.title = isDark ? "Light Mode" : "Dark Mode";
+  }
+
+  button.addEventListener("click", () => {
+    const isDark = document.body.classList.toggle("dark-mode");
+
+    localStorage.setItem("glosseDarkMode", isDark ? "on" : "off");
+
+    updateButton();
+  });
+
+  updateButton();
+})();
+</script>
+</body>
+</html>
